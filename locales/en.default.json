@@ -169,6 +169,12 @@
         "price": "Price",
         "quantity": "Quantity"
       },
+      "dimensions": {
+        "size": "Size",
+        "width": "Width",
+        "height": "Height",
+        "depth": "Depth"
+      },
       "share": "Share this product",
       "sold_out": "Sold out",
       "unavailable": "Unavailable",

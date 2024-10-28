@@ -2066,6 +2066,10 @@
           "name": "Buy variants buttons",
           "settings": {}
         },
+        "dimensions": {
+          "name": "Dimensions",
+          "settings": {}
+        },
         "pickup_availability": {
           "name": "Pickup availability"
         },

@@ -474,7 +474,14 @@
               {%- when 'buy_variants_buttons' -%}
                 {%- render 'buy-variants-buttons',
                   block: block,
-                  product: product
+                  product: product,
+                  section_id: section.id
+                -%}
+              {%- when 'dimensions' -%}
+                {%- render 'dimensions',
+                  block: block,
+                  product: product,
+                  section_id: section.id
                 -%}
               {%- when 'rating' -%}
                 {%- if product.metafields.reviews.rating.value != blank -%}
@@ -921,8 +928,13 @@
       ]
     },
     {
+<<<<<<< HEAD
       "type": "buy_variants_buttons",
       "name": "t:sections.main-product.blocks.buy_variants_buttons.name",
+=======
+      "type": "dimensions",
+      "name": "t:sections.main-product.blocks.dimensions.name",
+>>>>>>> 6e8b903 (Implemented dimensions metafield feature :sparkles:)
       "limit": 1,
       "settings": []
     },

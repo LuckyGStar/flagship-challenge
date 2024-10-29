@@ -2062,6 +2062,10 @@
             }
           }
         },
+        "buy_variants_buttons": {
+          "name": "Buy variants buttons",
+          "settings": {}
+        },
         "pickup_availability": {
           "name": "Pickup availability"
         },

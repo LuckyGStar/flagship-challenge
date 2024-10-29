@@ -1,0 +1,49 @@
+{{ 'component-buy-variants.css' | asset_url | stylesheet_tag }}
+
+{%- assign total_inventory_quantity = 0 -%}
+
+<buy-variants>
+  <table>
+    <thead>
+      <tr>
+        <th>{{ 'products.product.buy_variants.sku' | t }}</th>
+        <th>{{ 'products.product.buy_variants.price' | t }}</th>
+        <th>{{ 'products.product.buy_variants.quantity' | t }}</th>
+      </tr>
+    </thead>
+    <tbody>
+      {%- for variant in product.variants -%}
+        {%- liquid
+          assign variant_inventory_quantity = variant.inventory_quantity
+          assign total_inventory_quantity = total_inventory_quantity | plus: variant_inventory_quantity
+        -%}
+        <tr>
+          <td>{{ variant.sku }}</td>
+          <td>{{ variant.price | money }}</td>
+          <td class="{% if variant_inventory_quantity == 0 %}disabled{% endif %}">
+            <input
+              class="text-center pointer"
+              type="number"
+              min="0"
+              max="{{ variant_inventory_quantity }}"
+              data-id="{{ variant.id }}"
+              value="0"
+              {% if variant_inventory_quantity == 0 %}disabled{% endif %}
+            />
+        </tr>
+      {%- endfor -%}
+    </tbody>
+  </table>
+
+  <button class="product-form__submit button button--full-width button--primary {% if total_inventory_quantity == 0 %}disabled{% endif %}">
+    {%- if total_inventory_quantity > 0 -%}            
+      {{ 'products.product.add_to_cart' | t }}
+    {%- else -%}
+      {{ 'products.product.sold_out' | t }}
+    {%- endif -%}
+  </button>
+
+  <span class="error"></span>
+</buy-variants>
+
+<script src="{{ 'buy-variants.js' | asset_url }}" defer="defer"></script>

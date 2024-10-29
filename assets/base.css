@@ -3595,3 +3595,12 @@ details-disclosure > details {
     transform: translateX(100%) scaleX(0);
   }
 }
+
+/* Additional Basic Styles */
+.text-center {
+  text-align: center;
+}
+
+.pointer {
+  cursor: pointer;
+}

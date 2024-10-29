@@ -471,6 +471,11 @@
                   section_id: section.id,
                   show_pickup_availability: true
                 -%}
+              {%- when 'buy_variants_buttons' -%}
+                {%- render 'buy-variants-buttons',
+                  block: block,
+                  product: product
+                -%}
               {%- when 'rating' -%}
                 {%- if product.metafields.reviews.rating.value != blank -%}
                   <div class="rating-wrapper">
@@ -914,6 +919,12 @@
           "info": "t:sections.main-product.blocks.buy_buttons.settings.show_gift_card_recipient.info"
         }
       ]
+    },
+    {
+      "type": "buy_variants_buttons",
+      "name": "t:sections.main-product.blocks.buy_variants_buttons.name",
+      "limit": 1,
+      "settings": []
     },
     {
       "type": "description",

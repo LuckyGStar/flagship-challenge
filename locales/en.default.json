@@ -164,6 +164,11 @@
         "sale_price": "Sale price",
         "unit_price": "Unit price"
       },
+      "buy_variants": {
+        "sku": "SKU",
+        "price": "Price",
+        "quantity": "Quantity"
+      },
       "share": "Share this product",
       "sold_out": "Sold out",
       "unavailable": "Unavailable",

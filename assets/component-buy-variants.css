@@ -1,0 +1,20 @@
+buy-variants table {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+buy-variants table tbody input {
+  width: 100%;
+  border: none;
+  height: 45px;
+}
+
+buy-variants table tbody input:focus-visible {
+  outline: 0;
+  outline-offset: 0;
+  box-shadow: none;
+}
+
+buy-variants .error {
+  color: red;
+}

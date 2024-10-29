@@ -1,0 +1,32 @@
+.news-carousel {
+  flex-direction: row;
+  padding-top: 40px;
+}
+
+.carousel-item {
+  width: 33.3%;
+  order: 2;
+}
+
+.carousel-item--featured {
+  order: 1;
+}
+
+.carousel-item .carousel-item__title h1 {
+  font-size: 30px;
+}
+
+.carousel-item .carousel-item__image {
+  padding: 20px;
+  height: 250px;
+}
+
+@media screen and (max-width: 768px) {
+  .news-carousel {
+    flex-direction: column;
+  }
+
+  .carousel-item {
+    width: 100%;
+  }
+}

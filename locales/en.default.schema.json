@@ -1965,6 +1965,89 @@
         }
       }
     },
+    "news-carousel": {
+      "name": "News Carousel",
+      "blocks": {
+        "campaign": {
+          "name": "Campaign",
+          "settings": {
+            "title": {
+              "label": "Title",
+              "default": "Title",
+              "info": "Please type the title of the section."
+            },
+            "color": {
+              "label": "Color",
+              "info": "Please select the color of the section heading."
+            },
+            "description": {
+              "label": "Description",
+              "default": "Description",
+              "info": "Please type the description of the section."
+            },
+            "featured": {
+              "label": "Featured?",
+              "info": "Please type the description of the section."
+            },
+            "image": {
+              "label": "Image"
+            }
+          }
+        },
+        "new-product": {
+          "name": "New Product",
+          "settings": {
+            "title": {
+              "label": "Title",
+              "default": "Title",
+              "info": "Please type the title of the section."
+            },
+            "color": {
+              "label": "Color",
+              "info": "Please select the color of the section heading."
+            },
+            "description": {
+              "label": "Description",
+              "default": "Description",
+              "info": "Please type the description of the section."
+            },
+            "featured": {
+              "label": "Featured?",
+              "info": "Please type the description of the section."
+            },
+            "image": {
+              "label": "Image"
+            }
+          }
+        },
+        "news": {
+          "name": "News",
+          "settings": {
+            "title": {
+              "label": "Title",
+              "default": "Title",
+              "info": "Please type the title of the section."
+            },
+            "color": {
+              "label": "Color",
+              "info": "Please select the color of the section heading."
+            },
+            "description": {
+              "label": "Description",
+              "default": "Description",
+              "info": "Please type the description of the section."
+            },
+            "featured": {
+              "label": "Featured?",
+              "info": "Please type the description of the section."
+            },
+            "image": {
+              "label": "Image"
+            }
+          }
+        }
+      }
+    },
     "main-product": {
       "name": "Product information",
       "blocks": {

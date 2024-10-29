@@ -3596,11 +3596,47 @@ details-disclosure > details {
   }
 }
 
-/* Additional Basic Styles */
+/* base tailwind.css classes */
 .text-center {
   text-align: center;
 }
 
+.flex {
+  display: flex;
+}
+
+.w-full {
+  width: 100%;
+}
+
+.h-full {
+  height: 100%;
+}
+
 .pointer {
   cursor: pointer;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.aspect-square {
+  aspect-ratio: 1 / 1;
+}
+
+.aspect-video {
+  aspect-ratio: 16 / 9;
+}
+
+.mb-0 {
+  margin-bottom: 0px;
+}
+
+.object-cover {
+  object-fit: cover;
 }

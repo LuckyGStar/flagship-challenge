@@ -1,0 +1,163 @@
+{{ 'component-news-carousel.css' | asset_url | stylesheet_tag }}
+
+<news-carousel>
+  <div class="page-width">
+    <div class="news-carousel flex">
+      {%- for block in section.blocks -%}
+        {%- case block.type -%}
+          {%- when 'campaign' or 'new-product' or 'news' -%}
+            <div class="carousel-item flex flex-col {{ block.type }} {% if block.settings.featured == true %}carousel-item--featured{% endif %}">
+              <div class="carousel-item__title text-center">
+                {%- if block.settings.title -%}
+                  <h1 class="mb-0" style="color: {{ block.settings.color }};">
+                    {{ block.settings.title }}
+                  </h1>
+                {%- endif -%}
+              </div>
+              <div class="carousel-item__image">
+                {%- if block.settings.image -%}
+                  <img class="w-full h-full object-cover pointer" src="{{ block.settings.image | image_url }}" alt="campaign" loading="lazy">
+                {%- endif -%}
+              </div>
+              <div class="carousel-item__description text-center">
+                {%- if block.settings.description -%}
+                  {{ block.settings.description }}
+                {%- endif -%}
+              </div>
+            </div>
+          {%- endcase -%}
+      {%- endfor -%}
+    </div>
+  </div>
+</news-carousel>
+
+{% schema %}
+  {
+    "name": "t:sections.news-carousel.name",
+    "settings": [],
+    "blocks": [
+      {
+        "type": "campaign",
+        "name": "t:sections.news-carousel.blocks.campaign.name",
+        "settings": [
+          {
+            "type": "text",
+            "id": "title",
+            "label": "t:sections.news-carousel.blocks.campaign.settings.title.label",
+            "default": "t:sections.news-carousel.blocks.campaign.settings.title.default",
+            "info": "t:sections.news-carousel.blocks.campaign.settings.title.info"
+          },
+          {
+            "type": "color",
+            "id": "color",
+            "default": "#FF0000",
+            "label": "t:sections.news-carousel.blocks.campaign.settings.color.label",
+            "info": "t:sections.news-carousel.blocks.campaign.settings.color.info"
+          },
+          {
+            "type": "richtext",
+            "id": "description",
+            "label": "t:sections.news-carousel.blocks.campaign.settings.description.label",
+            "default": "t:sections.news-carousel.blocks.campaign.settings.description.default",
+            "info": "t:sections.news-carousel.blocks.campaign.settings.description.info"
+          },
+          {
+            "type": "checkbox",
+            "id": "featured",
+            "label": "t:sections.news-carousel.blocks.campaign.settings.featured.label",
+            "default": false,
+            "info": "t:sections.news-carousel.blocks.campaign.settings.featured.info"
+          },
+          {
+            "type": "image_picker",
+            "id": "image",
+            "label": "t:sections.news-carousel.blocks.campaign.settings.image.label"
+          }
+        ]
+      },
+      {
+        "type": "new-product",
+        "name": "t:sections.news-carousel.blocks.new-product.name",
+        "settings": [
+          {
+            "type": "text",
+            "id": "title",
+            "label": "t:sections.news-carousel.blocks.new-product.settings.title.label",
+            "default": "t:sections.news-carousel.blocks.new-product.settings.title.default",
+            "info": "t:sections.news-carousel.blocks.new-product.settings.title.info"
+          },
+          {
+            "type": "color",
+            "id": "color",
+            "default": "#0000FF",
+            "label": "t:sections.news-carousel.blocks.new-product.settings.color.label",
+            "info": "t:sections.news-carousel.blocks.new-product.settings.color.info"
+          },
+          {
+            "type": "richtext",
+            "id": "description",
+            "label": "t:sections.news-carousel.blocks.new-product.settings.description.label",
+            "default": "t:sections.news-carousel.blocks.new-product.settings.description.default",
+            "info": "t:sections.news-carousel.blocks.new-product.settings.description.info"
+          },
+          {
+            "type": "checkbox",
+            "id": "featured",
+            "label": "t:sections.news-carousel.blocks.new-product.settings.featured.label",
+            "default": false,
+            "info": "t:sections.news-carousel.blocks.new-product.settings.featured.info"
+          },
+          {
+            "type": "image_picker",
+            "id": "image",
+            "label": "t:sections.news-carousel.blocks.new-product.settings.image.label"
+          }
+        ]
+      },
+      {
+        "type": "news",
+        "name": "t:sections.news-carousel.blocks.news.name",
+        "settings": [
+          {
+            "type": "text",
+            "id": "title",
+            "label": "t:sections.news-carousel.blocks.news.settings.title.label",
+            "default": "t:sections.news-carousel.blocks.news.settings.title.default",
+            "info": "t:sections.news-carousel.blocks.news.settings.title.info"
+          },
+          {
+            "type": "color",
+            "id": "color",
+            "default": "#00FF00",
+            "label": "t:sections.news-carousel.blocks.news.settings.color.label",
+            "info": "t:sections.news-carousel.blocks.news.settings.color.info"
+          },
+          {
+            "type": "richtext",
+            "id": "description",
+            "label": "t:sections.news-carousel.blocks.news.settings.description.label",
+            "default": "t:sections.news-carousel.blocks.news.settings.description.default",
+            "info": "t:sections.news-carousel.blocks.news.settings.description.info"
+          },
+          {
+            "type": "checkbox",
+            "id": "featured",
+            "label": "t:sections.news-carousel.blocks.news.settings.featured.label",
+            "default": false,
+            "info": "t:sections.news-carousel.blocks.news.settings.featured.info"
+          },
+          {
+            "type": "image_picker",
+            "id": "image",
+            "label": "t:sections.news-carousel.blocks.news.settings.image.label"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "t:sections.news-carousel.name"
+      }
+    ]
+  }
+{% endschema %}

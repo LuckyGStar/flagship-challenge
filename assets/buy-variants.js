@@ -23,7 +23,7 @@ class BuyVariants extends HTMLElement {
           }
         })
 
-        if (cartItems.length) {
+        if (cartItems.items.length) {
           this.addToCart(this, cartItems)
         } else {
           this.querySelector('.error').innerHTML = `You need at least 1 item to add to the cart.`

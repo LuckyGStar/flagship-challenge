@@ -1,0 +1,28 @@
+{{ 'component-dimensions.css' | asset_url | stylesheet_tag }}
+
+{%- assign metafield = product.selected_or_first_available_variant.metafields.information.dimensions.value -%}
+
+{%- if metafield != blank -%}
+  <dimensions id="Dimensions-{{ section_id }}">
+    <table>
+      <tbody>
+        <tr>
+          <td>{{ 'products.product.dimensions.size' | t }}</td>
+          <td>{{ metafield.size.value }}</td>
+        </tr>  
+        <tr>
+          <td>{{ 'products.product.dimensions.width' | t }}</td>
+          <td>{{ metafield.width.value }}</td>
+        </tr>  
+        <tr>
+          <td>{{ 'products.product.dimensions.height' | t }}</td>
+          <td>{{ metafield.height.value }}</td>
+        </tr>  
+        <tr>
+          <td>{{ 'products.product.dimensions.depth' | t }}</td>
+          <td>{{ metafield.depth.value }}</td>
+        </tr>     
+      </tbody>
+    </table>
+  </dimensions>
+{%- endif -%}
